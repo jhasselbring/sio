@@ -1,0 +1,33 @@
+@import "./reset.scss";
+body#container {
+    width: 100vw;
+    background-color: #212121;
+    color: #e1e1e1;
+    font-family: Arial, sans-serif;
+    div#columns {
+        display: flex;
+        background-color: darkgray;
+        & > div {
+            width: 100%;
+            & > .column-header {
+                background-color: #5a5a5a;
+                margin: 5px;
+                padding: 10px;
+                font-size: 30px;
+            }
+            & > .column-contents {
+                font-size: 16px;
+                & > .vid {
+                    margin: 10px;
+                    padding: 20px;
+                    background-color: rgba(50, 50, 50, 0.5);
+                    cursor: pointer;
+                    border-radius: 2px;
+                }
+                & > .vid:hover {
+                    background-color: rgba(50, 50, 50, .81);
+                }
+            }
+        }
+    }
+}

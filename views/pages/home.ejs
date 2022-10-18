@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <script>
+            socket.on('connect', () => {
+                console.log("Connected to WS server");
+                console.log(socket.connected);
+
+            });
+            socket.on("disconnect", () => {
+
+                // Reload page when nodemon restarts
+                window.location.reload();
+            });
+            socket.on('chat message', msg => {
+                console.log('State has been updated');
+            });
+        </script>
+</head>
+
+<body id="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <div id="columns">
+        <div id="dlv">
+            <div class="column-header">DLv</div>
+            <div class="column-contents">
+                <div class="vid">986btuhi</div>
+            </div>
+        </div>
+        <div id="dla">
+            <div class="column-header">DLa</div>
+        </div>
+        <div id="mav">
+            <div class="column-header">mAV</div>
+        </div>
+        <div id="c2mp3">
+            <div class="column-header">C2MP3</div>
+        </div>
+        <div id="dis">
+            <div class="column-header">DiS</div>
+            <div class="column-contents">
+                <div class="vid">986btuhi</div>
+            </div>
+        </div>
+        <div id="error">
+            <div class="column-header">Error</div>
+        </div>
+    </div>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
