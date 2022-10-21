@@ -6,11 +6,12 @@ const cors = require('cors');
 const { Server } = require("socket.io");
 
 const ExpressApp = express();
-const key = fs.readFileSync(path.resolve(__dirname) + '/key.pem');
-const cert = fs.readFileSync(path.resolve(__dirname) + '/cert.pem');
+const key = fs.readFileSync(path.resolve(__dirname + '/key.pem'));
+const cert = fs.readFileSync(path.resolve(__dirname + '/cert.pem'));
 const server = https.createServer({ key: key, cert: cert }, ExpressApp);
 let io = new Server(server);
-console.log(path.resolve(__dirname) + '../public');
+
+console.log(path.resolve('../public'));
 ExpressApp.set('view engine', 'ejs');
 ExpressApp.use('/', express.static(path.resolve(__dirname) + '/../public'))
 

@@ -14,8 +14,8 @@
                 // Reload page when nodemon restarts
                 window.location.reload();
             });
-            socket.on('chat message', msg => {
-                console.log('State has been updated');
+            socket.on('aconnection', msg => {
+                console.log('A new connection has been established');
             });
         </script>
 </head>
